@@ -1,0 +1,56 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/edit_staff#about">
+  <table width="375" border="1"class="table table-striped">
+    <tr>
+      <td>NAME</td>
+      <td><input type="text" name="textfield33"  value="{{ val.name }}" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+      <td>gender</td>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" {% if val.gender ==  'male' %} checked {% endif %} />
+      male
+      <input name="radiobutton" type="radio" value="female"{% if val.gender ==  'female' %} checked {% endif %}  />
+      female</label></td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td><input type="text" name="textfield3" value="{{ val.place }}" required/></td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td><input type="text" name="textfield4" value="{{ val.pin }}" required pattern="[0-9]{6}"/></td>
+    </tr>
+    <tr>
+      <td>post</td>
+      <td><input type="text" name="textfield5" value="{{ val.post }}" required/></td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><input type="text" name="textfield6" value="{{ val.phone }}" required pattern="[0-9]{10}"/></td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input type="email" name="textfield7" value="{{ val.email }}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" /></td>
+    </tr>
+    <tr>
+      <td colspan=2><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="EDIT" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+{% endblock %}
+

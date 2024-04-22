@@ -1,0 +1,46 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'index.html' %}
+{% block body %}
+
+<body><p>.</p>
+<form id="form1" name="form1" method="post" action="manage_entry_level_staff_search">
+  <table width="328" border="1" class="table table-striped">
+      <tr>
+          <td colspan="6">Name<input type="text" name="tf" value='{{ n }}' required/>
+              <input type="submit" name="Submit" value="Search" />
+      </tr>
+    <tr>
+      <td>name</td>
+      <td>address</td>
+      <td>Gender</td>
+      <td>phone</td>
+      <td>email</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.name}}</td>
+      <td>&nbsp;{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}</td>
+      <td>{{ i.gender }}</td>
+      <td>&nbsp;{{ i.phone }}</td>
+      <td>{{ i.email }}</td>
+      <td><p><a href="edit_entrylevel_staff/{{ i.id }}">Edit</a></p>
+      <p><a href="delete_entrylevel_staff/{{ i.id }}">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><label>
+        <div align="center">
+          <a href="add_entry_level_staff#about">Add</a>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

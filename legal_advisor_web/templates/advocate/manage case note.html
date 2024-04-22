@@ -1,0 +1,32 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="add_case_type">
+MANAGE CASE NOTE
+  <table width="200" border="1" class="table">
+    <tr>
+      <td>case</td>
+      <td>note</td>
+      <td>date</td>
+      <td>&nbsp;</td>
+    </tr>                  {% for i in val %}
+
+    <tr>
+      <td>{{ i.CASE.case }}</td>
+      <td>&nbsp;{{ i.notes }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td><a href="dltnote/{{ i.id }}">delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add new" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body><p>.</p>
+<form id="form1" name="form1" method="post" action="">
+VIEW FEEDBACKS
+  <table width="200" border="1" class="table">
+    <tr>
+      <td>username</td>
+      <td>feedback</td>
+      <td>rating</td>
+        <td>date</td>
+    </tr>
+            {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.user.firstname }} {{ i.user.lastname }}</td>
+      <td>&nbsp;{{ i.feedback }}</td>
+      <td>&nbsp;{{ i.rating }}</td>
+    <td>{{ i.date }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

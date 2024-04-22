@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="add_entry_level_staffcode#about">
+  <table width="375" border="1"class="table table-striped">
+    <tr>
+      <td>NAME</td>
+      <td><input type="text" name="textfield33" required pattern="[A-Z a-z.]{3,25}" /></td>
+    </tr>
+      <td>gender</td>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" checked/>
+      male
+        <input name="radiobutton" type="radio" value="female" checked/>
+      female</label></td>
+    </tr>
+    <tr>
+      <td>place</td>
+      <td><input type="text" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td><input type="text" name="textfield4" required pattern="[0-9]{6}"/></td>
+    </tr>
+    <tr>
+      <td>post</td>
+      <td><input type="text" name="textfield5" required/></td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><input type="text" name="textfield6" required pattern="[0-9]{10}"/></td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input type="email" name="textfield7" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <td>username </td>
+      <td><input type="text" name="textfield8" required/></td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td><input type="text" name="textfield9" required/></td>
+    </tr>
+
+ 
+    <tr>
+      <td colspan=2><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+
+
+{% endblock %}

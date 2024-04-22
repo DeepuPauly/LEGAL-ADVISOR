@@ -1,0 +1,30 @@
+
+{% extends 'entry_staff/entrystaff_index.html' %}
+{% block body %}
+<br>
+    <br>
+<body>
+<form id="form1" name="form1" method="post" action="view_enquiry_and_send_reply_search#about">
+  <table width="200" border="1"class="table table-striped">
+    <label>
+       <input type="date" name="text" required/>
+        <input type="submit" name="Submit" value="Search" />
+      </label>
+    <tr>
+      <td>user</td>
+      <td>questions</td>
+      <td>date</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.user.firstname }} {{ i.user.lastname }}</td>
+      <td>&nbsp;{{ i.enquiry }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{% if i.reply == "pending" %}<a href="staff_send_reply/{{ i.id }}#about">reply</a>{% else %} {{ i.reply }} {% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

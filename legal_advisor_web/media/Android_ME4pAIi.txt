@@ -1,0 +1,12 @@
+architecture:
+linux kernel
+native libraries
+android runtime
+android framework
+application
+
+building block:
+Activity
+services(multiple apps on background)
+content providers(shared preference)
+broadcast recievers(battery low)

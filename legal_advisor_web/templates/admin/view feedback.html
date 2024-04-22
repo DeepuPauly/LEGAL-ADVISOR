@@ -1,0 +1,41 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="view_feedback_search#about">.
+  <table width="200" border="1"class="table table-striped">.
+    <tr>
+      <td>advocate</td>
+      <td><input type="date" name="textfield" value="{{ n }}" required/></td>
+      <td colspan="4"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Search" />
+          </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Advocate name </td>
+      <td>User name </td>
+      <td>Feedback</td>
+      <td>Rating</td>
+      <td>Date</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.advocate.first_name}}{{ i.advocate.last_name }}</td>
+      <td>{{ i.user.firstname }}{{ i.user.lastname }}</td>
+      <td>&nbsp;{{ i.feedback }}</td>
+      <td>&nbsp;{{ i.rating }}</td>
+      <td>{{ i.date }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

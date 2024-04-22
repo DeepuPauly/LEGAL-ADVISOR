@@ -1,0 +1,25 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<br>
+<br>
+  <table width="200" border="1" class="table">
+    <tr>
+      <td>user name </td>
+      <td>address</td>
+      <td colspan="2">case details </td>
+    </tr>
+  ALLOCATED USERS LIST
+      {% for i in val %}
+    <tr>
+      <td>{{ i.booking.CASE.user.firstname }} {{ i.booking.CASE.user.lastname }}</td>
+      <td>&nbsp;{{ i.booking.CASE.user.place }} ,{{ i.booking.CASE.user.post }},{{ i.booking.CASE.user.pin }}</td>
+      <td>&nbsp;{{ i.booking.CASE.case_details }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

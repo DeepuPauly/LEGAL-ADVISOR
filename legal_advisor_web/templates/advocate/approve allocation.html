@@ -1,0 +1,29 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="361" height="126" border="1" class="table">
+    <tr>
+      <td width="45">case</td>
+      <td width="79">case details </td>
+      <td width="84">user name </td>
+      <td width="71">phone</td>
+      <td width="71">file</td>
+      <td width="48">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.CASE.case }}</td>
+      <td>&nbsp;{{i.CASE.case_details }}</td>
+      <td>{{ i.CASE.user.firstname }} {{ i.CASE.user.lastname }}</td>
+      <td>{{ i.CASE.user.phone }}</td>
+      <td><a href="{{ i.CASE.file }}" download><u>{{ i.CASE.file }}</u></a> </td>
+      <td>{% if i.status == 'pending' %}<p><a href="/accept_req/{{ i.id }}" class="btn btn-primary">accept</a></p>
+      <p><a href="/reject_req/{{ i.id }}" class="btn btn-danger">reject</a></p>{% else %} {{ i.status }} {% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1">
+    <tr>
+      <td>report</td>
+      <td><label>
+        <input type="file" name="file" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>details</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+

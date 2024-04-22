@@ -1,0 +1,64 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="view_profile_View">
+  <table width="228" border="1" class="table">
+    <tr>
+      <td colspan="2" align="center"><div align="center">image</div>
+          <img src="{{ val.image.url }}" alt="error" height="80" width="100"/>
+      </td>
+
+    </tr>
+    <tr>
+      <td width="80">first name </td>
+      <td width="132">&nbsp;{{ val.first_name }}</td>
+    </tr>
+    <tr>
+      <td>last name </td>
+      <td>&nbsp;{{ val.last_name }}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+        <td>{{ val.gender }}</td>
+{#      <td><input name="radiobutton" type="radio" value="male"{% if val.gender ==  'male' %} checked {% endif %} />#}
+{#      male#}
+{#        <input name="radiobutton" type="radio" value="female"{% if val.gender ==  'female' %} checked {% endif %} />#}
+{#      female</td>#}
+    </tr>
+    <tr>
+      <td>place</td>
+      <td>{{ val.place }}</td>
+    </tr>
+    <tr>
+      <td>post</td>
+      <td>{{ val.post  }}</td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td>&nbsp;{{ val.pin }}</td>
+    </tr>
+    <tr>
+      <td>qualifications</td>
+      <td>{{ val.qualification }}</td>
+    </tr>
+    <tr>
+      <td>Experiance</td>
+      <td>{{ val.experience }}</td>
+    </tr>
+    <tr>
+      <td>Proof</td>
+        <td><a href="{{ val.idproof.url }}" download>download</a></td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>{{ val.phone }}</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>{{ val.email }}</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.legaladvisor">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MANAGE_MEDIA"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LEGALADVISOR"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".enquiry"
+            android:exported="false" />
+        <activity android:name=".PaymentActivity"/>
+        <activity
+            android:name=".casetype"
+            android:exported="false" />
+        <activity
+            android:name=".pubadvocates"
+            android:exported="false" />
+        <activity
+            android:name=".pubhome"
+            android:exported="false" />
+        <activity
+            android:name=".bstatus"
+            android:exported="false" />
+        <activity
+            android:name=".recommend"
+            android:exported="false" />
+        <activity
+            android:name=".feedbacks"
+            android:exported="false" />
+        <activity
+            android:name=".case_register"
+            android:exported="false" />
+        <activity
+            android:name=".schedule"
+            android:exported="false" />
+        <activity
+            android:name=".searchadvocates"
+            android:exported="false" />
+        <activity
+            android:name=".advocates"
+            android:exported="false" />
+        <activity
+            android:name=".Ipset"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".send_complaints" />
+        <activity android:name=".Login" />
+        <activity android:name=".signup" />
+        <activity android:name=".Test" />
+        <activity android:name=".userhome" />
+    </application>
+
+</manifest>

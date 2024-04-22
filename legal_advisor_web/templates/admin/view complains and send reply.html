@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="view_complians_and_send_reply_search#about">
+  <table width="269" border="1"class="table table-striped">
+    <tr>
+      <td width="60">date</td>
+      <td colspan="3"><input type="date" name="textfield" value='{{ n }}' required/>
+          <label>
+        <input type="submit" name="Submit" value="Search" />
+              </label></td>
+    </tr>
+    <tr>
+      <td>complaints</td>
+      <td width="50">date</td>
+      <td width="45">User name </td>
+      <td width="86">&nbsp;Reply</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.complains }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.LOGIN.username }} </td>
+        <td>{% if i.reply == "pending" %}
+      <a href="send_reply/{{ i.id }}">reply</a></td>
+    {% else %}{{ i.reply }}
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

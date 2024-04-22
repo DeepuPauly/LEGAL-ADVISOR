@@ -1,0 +1,30 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addnote">
+ADD CASE TYPE
+  <table width="306" border="1" class="table">
+    <tr>
+      <td width="80">case  </td>
+      <td width="210"><select name="s1" required>
+          {% for i in v %}
+          <option value="{{ i.CASE.id }}">{{ i.CASE.case }}</option>
+          {% endfor  %}
+      </select></td>
+    </tr>
+    <tr>
+      <td>Notes</td>
+      <td><input type="text" name="textfield2" required/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

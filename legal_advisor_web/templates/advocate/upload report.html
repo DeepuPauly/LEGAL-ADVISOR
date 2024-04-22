@@ -1,0 +1,33 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form method="post" enctype="multipart/form-data" name="form1" id="form1" action="adreports">
+  <table width="278" border="1" class="table">
+       <tr>
+      <td width="80">case  </td>
+      <td width="210"><select name="s1" required>
+      <option value="">select</option>
+          {% for i in v %}
+          <option value="{{ i.CASE.id }}">{{ i.CASE.case }}</option>
+          {% endfor  %}
+      </select></td>
+    </tr>
+    <tr>
+      <td width="326">Report
+        <label>
+        <input type="file" name="file" required/>
+      </label></td>
+
+    </tr>
+    <tr>
+      <td><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="upload" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

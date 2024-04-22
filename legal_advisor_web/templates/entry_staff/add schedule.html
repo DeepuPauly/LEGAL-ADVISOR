@@ -1,0 +1,36 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'entry_staff/entrystaff_index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/add_schedule_post">
+  <table width="299" border="1"class="table table-striped">
+    <tr>
+      <td width="40">date</td>
+      <td width="243"><input type="date" name="textfield" required/>
+      </td>
+    </tr>
+    <tr>
+      <td>from time </td>
+      <td><input type="time" name="textfield2" required/></td>
+    </tr>
+    <tr>
+      <td>to time </td>
+      <td><input type="time" name="textfield3" required/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="add" />
+      </div></td>
+    </tr>
+  </table>
+  <div align="center"></div>
+</form>
+</body>
+{% endblock %}

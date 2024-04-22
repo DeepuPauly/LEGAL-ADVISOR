@@ -1,0 +1,33 @@
+{% extends 'advocate/ad_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="send_complains">
+VIEW COMPLAINT REPLY
+  <table width="270" height="62" border="1" class="table">
+    <tr>
+      <td width="99">compliant </td>
+      <td width="43">date</td>
+      <td width="97">reply</td>
+    </tr>
+                  {% for i in val %}
+
+    <tr>
+      <td>&nbsp;{{ i.complains }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.reply }}</td>
+    </tr>
+      {% endfor %}
+
+
+
+<tr>
+      <td colspan="6"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="add new complaint" />
+          </div>
+      </label></td>
+    </tr>  </table>
+</form>
+</body>
+{% endblock %}

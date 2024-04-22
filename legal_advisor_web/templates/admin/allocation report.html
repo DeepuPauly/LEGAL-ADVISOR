@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="361" height="126" border="1"class="table table-striped">
+    <tr>
+      <td width="45">case</td>
+      <td width="79">case type </td>
+      <td width="84">user name </td>
+      <td width="71">advocate</td>
+
+    </tr>
+      {% for i in val %}
+      <tr>
+      <td>{{ i.booking.CASE.case }}</td>
+      <td>{{ i.advocate.CASETYPE.case_type }}</td>
+      <td>&nbsp;{{ i.booking.CASE.user.firstname }}{{ i.booking.CASE.user.lastname }}</td>
+      <td>{{ i.advocate.first_name }}{{ i.advocate.last_name }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+

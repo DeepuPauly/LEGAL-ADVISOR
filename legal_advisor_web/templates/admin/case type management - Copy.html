@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/case_type_managementsearch#about">
+<br/><br/><br/><br/>
+  <table width="350" border="1"class="table table-striped">
+      <tr>
+          <td colspan="3">Case Type
+              <input type="text" name="tf" value="{{ n }}" required/>
+              <input type="submit" name="Submit" value="Search" />
+      </tr>
+    <tr>
+      <td>Case Type </td>
+      <td>Details</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.case_type  }}</td>
+      <td>{{ i.details }}</td>
+      <td><a href="case_type_delete/{{ i.id }}">Delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="3">        <div align="center">
+       <a href="add_case_details">Add New</a>
+      </div></td>
+    </tr>
+  </table>
+<br/>
+</form>
+</body>
+{% endblock %}
+
